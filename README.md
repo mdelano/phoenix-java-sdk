@@ -3,6 +3,8 @@ phoenix-java-sdk
 
 The MediaSilo Java SDK
 
+### Maven
+
 ``` xml
     <repositories>
         <repository>
@@ -28,4 +30,11 @@ The MediaSilo Java SDK
             <version>0.0.1</version>
         </dependency>
     </dependencies>
+```
+
+### Usage
+```java
+		MediaSiloSdk mediaSiloSdk = com.mediasilo.sdk.MediaSiloSdk.getInstance();
+		mediaSiloSdk.init("username", "password", "hostname");
+		QuickLinkResponse quickLinkResponse = mediaSiloSdk.quicklinks().read("my quicklink id");
 ```
