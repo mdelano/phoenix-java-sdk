@@ -3,8 +3,6 @@ package com.mediasilo.sdk.rest.resource;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mediasilo.sdk.rest.client.MediaSiloRestClientException;
 import com.mediasilo.sdk.rest.client.RestClient;
-import com.mediasilo.sdk.rest.resource.CreateResponse;
-import com.mediasilo.sdk.rest.resource.MediaSiloResourceException;
 
 import java.io.IOException;
 

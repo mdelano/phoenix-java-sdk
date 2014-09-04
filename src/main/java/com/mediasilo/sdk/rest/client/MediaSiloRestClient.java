@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mediasilo.sdk.rest.credentials.BasicAuthenticationCredentials;
 import com.mediasilo.sdk.rest.credentials.Credentials;
+import com.mediasilo.sdk.rest.credentials.SessionCredentials;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -120,6 +121,10 @@ public class MediaSiloRestClient implements RestClient {
 			if(credentials instanceof BasicAuthenticationCredentials) {
 				String basicAuthEncodedCreds = ((BasicAuthenticationCredentials)credentials).encodeForBasicAuth();
 				request.setHeader("Authorization", basicAuthEncodedCreds);
+			}
+			if(credentials instanceof SessionCredentials) {
+				SessionCredentials sessionCreds = ((SessionCredentials)credentials);
+				request.setHeader("MediaSiloSessionKey", sessionCreds.getHostName());
 			}
 
 			request.setHeader("MediaSiloHostContext", credentials.getHostName());

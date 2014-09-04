@@ -5,6 +5,7 @@ import com.mediasilo.sdk.rest.credentials.BasicAuthenticationCredentials;
 import com.mediasilo.sdk.rest.credentials.Credentials;
 import com.mediasilo.sdk.rest.client.MediaSiloRestClient;
 import com.mediasilo.sdk.rest.client.RestClient;
+import com.mediasilo.sdk.rest.credentials.SessionCredentials;
 
 /**
  * This is the wrapper class for the MediaSilo API. It contains all of the services available to MediaSilo
@@ -39,7 +40,23 @@ public class MediaSiloSdk {
 	 */
 	public void init(String username, String password, String hostname) {
 		Credentials credentials = new BasicAuthenticationCredentials(username, password, hostname);
-		restClient = new MediaSiloRestClient("http://127.0.0.1:9001/v3", credentials);
+		init(credentials);
+	}
+
+	/**
+	 * @param sessionKey
+	 * @param hostname
+	 */
+	public void init(String sessionKey, String hostname) {
+		Credentials credentials = new SessionCredentials(sessionKey, hostname);
+		init(credentials);
+	}
+
+	/**
+	 * @param credentials
+	 */
+	private void init(Credentials credentials) {
+		restClient = new MediaSiloRestClient("https://phoenix.mediasilo.com/v3", credentials);
 	}
 
 	/**
