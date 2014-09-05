@@ -18,6 +18,7 @@ import com.mediasilo.sdk.rest.credentials.SessionCredentials;
  */
 public class MediaSiloSdk {
 
+	private String apiRootURl = "https://phoenix.mediasilo.com/v3";
 	private RestClient restClient;
 
 	private QuickLink quickLink;
@@ -60,7 +61,15 @@ public class MediaSiloSdk {
 	 * @param credentials
 	 */
 	private void init(Credentials credentials) {
-		restClient = new MediaSiloRestClient("https://phoenix.mediasilo.com/v3", credentials);
+		restClient = new MediaSiloRestClient(apiRootURl, credentials);
+	}
+
+	public String getApiRootURl() {
+		return apiRootURl;
+	}
+
+	public void setApiRootURl(String apiRootURl) {
+		this.apiRootURl = apiRootURl;
 	}
 
 	/**
