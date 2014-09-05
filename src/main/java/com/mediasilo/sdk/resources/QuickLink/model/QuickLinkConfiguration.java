@@ -21,6 +21,8 @@ public class QuickLinkConfiguration {
 		for(Map.Entry entry : settings.entrySet()) {
 			keyValueSettings.add(new KeyValueSetting(entry.getKey().toString(), entry.getValue().toString()));
 		}
+
+		this.settings = keyValueSettings;
 	}
 
 	public String getId() {
