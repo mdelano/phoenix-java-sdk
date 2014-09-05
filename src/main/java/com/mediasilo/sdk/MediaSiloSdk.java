@@ -1,10 +1,11 @@
 package com.mediasilo.sdk;
 
 import com.mediasilo.sdk.resources.QuickLink.QuickLink;
-import com.mediasilo.sdk.rest.credentials.BasicAuthenticationCredentials;
-import com.mediasilo.sdk.rest.credentials.Credentials;
+import com.mediasilo.sdk.resources.asset.Asset;
 import com.mediasilo.sdk.rest.client.MediaSiloRestClient;
 import com.mediasilo.sdk.rest.client.RestClient;
+import com.mediasilo.sdk.rest.credentials.BasicAuthenticationCredentials;
+import com.mediasilo.sdk.rest.credentials.Credentials;
 import com.mediasilo.sdk.rest.credentials.SessionCredentials;
 
 /**
@@ -19,6 +20,7 @@ public class MediaSiloSdk {
 	private RestClient restClient;
 
 	private QuickLink quickLink;
+	private Asset asset;
 
 
 	protected static class SingletonHolder {
@@ -75,6 +77,23 @@ public class MediaSiloSdk {
 		}
 
 		return quickLink;
+	}
+
+	/**
+	 * Assets are at the core of all MediaSilo applications. Every video and audio file, image, document and archive
+	 * that is uploaded is considered an Asset. Asset objects are database records that refer to files that have been
+	 * uploaded. Some of these objects are fairly simple, while others (like videos) contain additional data about
+	 * source files, proxies and playback options.
+	 *
+	 * @see: http://developers.mediasilo.com/assets
+	 * @return
+	 */
+	public Asset assets() {
+		if(asset == null) {
+			asset = new Asset(restClient);
+		}
+
+		return asset;
 	}
 
 }
