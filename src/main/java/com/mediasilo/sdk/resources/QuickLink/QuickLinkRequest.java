@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mediasilo.sdk.resources.QuickLink.model.QuickLinkConfiguration;
 
 import java.util.List;
+import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -27,6 +28,13 @@ public class QuickLinkRequest {
 		this(title, description, assetIds);
 
 		this.configuration = configuration;
+		this.expires = expires;
+	}
+
+	public QuickLinkRequest(String title, String description, List<String> assetIds, Map<String, String> configuration, Long expires) {
+		this(title, description, assetIds);
+
+		this.configuration = new QuickLinkConfiguration(configuration);
 		this.expires = expires;
 	}
 

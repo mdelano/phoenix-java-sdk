@@ -6,7 +6,7 @@
 
     <groupId>com.mediasilo.phoenix</groupId>
     <artifactId>phoenix-java-sdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>MediaSilo Java SDK</name>

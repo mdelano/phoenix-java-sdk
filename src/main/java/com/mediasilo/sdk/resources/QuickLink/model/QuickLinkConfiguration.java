@@ -15,7 +15,7 @@ public class QuickLinkConfiguration {
 		this.settings = settings;
 	}
 
-	public QuickLinkConfiguration(HashMap<String, String> settings) {
+	public QuickLinkConfiguration(Map<String, String> settings) {
 		List<KeyValueSetting> keyValueSettings = new ArrayList<KeyValueSetting>();
 
 		for(Map.Entry entry : settings.entrySet()) {

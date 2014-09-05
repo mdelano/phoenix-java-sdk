@@ -6,15 +6,15 @@ public class CreateResponse {
 		private CreateResponse() {
 		}
 
-		private CreateResponse(String id) {
+		public CreateResponse(String id) {
 			this.id = id;
 		}
 
-		private String getId() {
+		public String getId() {
 			return id;
 		}
 
-		private void setId(String id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 	}
