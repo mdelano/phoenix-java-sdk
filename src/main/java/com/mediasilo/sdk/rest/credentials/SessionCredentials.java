@@ -10,4 +10,11 @@ public class SessionCredentials extends AbstractCredentials {
 		this.sessionKey = sessionKey;
 	}
 
+	public String getSessionKey() {
+		return sessionKey;
+	}
+
+	public void setSessionKey(String sessionKey) {
+		this.sessionKey = sessionKey;
+	}
 }

@@ -124,7 +124,7 @@ public class MediaSiloRestClient implements RestClient {
 			}
 			if(credentials instanceof SessionCredentials) {
 				SessionCredentials sessionCreds = ((SessionCredentials)credentials);
-				request.setHeader("MediaSiloSessionKey", sessionCreds.getHostName());
+				request.setHeader("MediaSiloSessionKey", sessionCreds.getSessionKey());
 			}
 
 			request.setHeader("MediaSiloHostContext", credentials.getHostName());
