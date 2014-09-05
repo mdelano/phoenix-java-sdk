@@ -3,7 +3,7 @@ package com.mediasilo.sdk.resources.QuickLink;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mediasilo.sdk.resources.QuickLink.model.QuickLinkConfiguration;
-import com.mediasilo.sdk.resources.QuickLink.model.Share;
+import com.mediasilo.sdk.resources.share.ShareRequestResponse;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class QuickLinkResponse {
 	private String description;
 	private List<String> assetIds;
 	private QuickLinkConfiguration configuration;
-	private List<Share> shares;
+	private List<ShareRequestResponse> shares;
 	private String ownerId;
 	private String accountId;
 	private Long created;
@@ -76,11 +76,11 @@ public class QuickLinkResponse {
 		this.configuration = configuration;
 	}
 
-	public List<Share> getShares() {
+	public List<ShareRequestResponse> getShares() {
 		return shares;
 	}
 
-	public void setShares(List<Share> shares) {
+	public void setShares(List<ShareRequestResponse> shares) {
 		this.shares = shares;
 	}
 

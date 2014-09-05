@@ -1,4 +1,4 @@
-package com.mediasilo.sdk.resources.QuickLink.model;
+package com.mediasilo.sdk.resources.share.model;
 
 import java.util.List;
 

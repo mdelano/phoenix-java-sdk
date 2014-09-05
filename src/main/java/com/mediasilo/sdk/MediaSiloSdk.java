@@ -2,6 +2,7 @@ package com.mediasilo.sdk;
 
 import com.mediasilo.sdk.resources.QuickLink.QuickLink;
 import com.mediasilo.sdk.resources.asset.Asset;
+import com.mediasilo.sdk.resources.share.Share;
 import com.mediasilo.sdk.rest.client.MediaSiloRestClient;
 import com.mediasilo.sdk.rest.client.RestClient;
 import com.mediasilo.sdk.rest.credentials.BasicAuthenticationCredentials;
@@ -21,6 +22,7 @@ public class MediaSiloSdk {
 
 	private QuickLink quickLink;
 	private Asset asset;
+	private Share share;
 
 
 	protected static class SingletonHolder {
@@ -94,6 +96,14 @@ public class MediaSiloSdk {
 		}
 
 		return asset;
+	}
+
+	public Share shares() {
+		if(share == null) {
+			share = new Share(restClient);
+		}
+
+		return share;
 	}
 
 }
